@@ -26,4 +26,4 @@ COPY --from=Builder /app/package.json /app/
 COPY --from=Builder /app/dist /app/dist
 COPY --from=Fetcher /app/node_modules /app/node_modules
 
-CMD ["node", "/app/dist/index.js"]
+CMD ["node", "--loader", "@k-foss/ts-esnode", "--experimental-specifier-resolution=node", "--harmony-top-level-await", "--harmony-optional-chaining", "/app/dist/index.js"]
