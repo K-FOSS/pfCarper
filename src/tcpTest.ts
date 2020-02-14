@@ -2,11 +2,10 @@
 import isReachable from 'is-reachable';
 import { config } from './Config';
 import { getDroplet } from './Droplet';
+import { log } from './Library/log';
 
 export async function testDroplet(dropletId: number): Promise<boolean> {
-  console.debug(
-    `Testing tcp port ${config.tcpPort} on dropletId: ${dropletId}.`,
-  );
+  log(`Testing tcp port ${config.tcpPort} on dropletId: ${dropletId}.`, 'info');
 
   const droplet = await getDroplet(dropletId);
 

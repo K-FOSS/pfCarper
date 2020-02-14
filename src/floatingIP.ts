@@ -4,22 +4,23 @@ import { config } from './Config';
 import { digitalOcean } from './Library/digitalOcean';
 import { getTaggedDroplets } from './Tags';
 import { testDroplet } from './tcpTest';
+import { log } from './Library/log';
 
 export async function getFloatingIP(): Promise<FloatingIP> {
   return digitalOcean.floatingIPs.getExistingFloatingIP(config.floatingIP);
 }
 
 export async function assignFloatingIPToAlive(): Promise<void> {
-  console.debug(`Assigning floating IP to next avaible droplet`);
+  log(`Assigning floating IP to next avaible droplet`);
 
   const taggedDroplets = await getTaggedDroplets();
 
-  console.debug(`Got tagged droplets, now looping until first up droplet`);
+  log(`Got tagged droplets, now looping until first up droplet`, 'info');
 
   for (const droplet of taggedDroplets) {
     const testResult = await testDroplet(droplet.id);
     if (testResult) {
-      console.debug(`Droplet tested successfully, assigning floating IP`);
+      log(`Droplet tested successfully, assigning floating IP`);
 
       await assignFloatingIPToDroplet(droplet.id);
       break;
@@ -30,7 +31,7 @@ export async function assignFloatingIPToAlive(): Promise<void> {
 export async function assignFloatingIPToDroplet(
   dropletId: number,
 ): Promise<any> {
-  console.debug(`Assigning Floating IP to droplet: ${dropletId}`);
+  log(`Assigning Floating IP to droplet: ${dropletId}`);
 
   await digitalOcean.floatingIPActions.assignFloatingIPToDroplet(
     config.floatingIP,

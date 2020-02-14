@@ -2,11 +2,9 @@ FROM node:13-alpine3.11 as Builder
 WORKDIR /app
 
 COPY package.json package-lock.json tsconfig.json ./
-
 RUN npm ci
 
 COPY src ./src/
-
 RUN NODE_ENV=production npm run build
 
 
@@ -14,10 +12,7 @@ FROM node:13-alpine3.11 as Fetcher
 WORKDIR /app
 ENV NODE_ENV=production
 
-RUN apk add --no-cache python3 build-base
-
 COPY package.json package-lock.json ./
-
 RUN npm ci --prod
 
 

@@ -17,3 +17,4 @@ jobs:
           username: ${{ secrets.GITHUB_USERNAME }}
           password: ${{ secrets.GITHUB_PASSWORD }}
           registry: docker.pkg.github.com
+          cache: true
