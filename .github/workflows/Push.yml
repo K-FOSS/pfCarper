@@ -14,6 +14,6 @@ jobs:
         with:
           dockerfile: Dockerfile
           name: docker.pkg.github.com/k-foss/pfcarper/pfcarper
-          username: ${{ secrets.DOCKER_GITHUB_USERNAME }}
-          password: ${{ secrets.DOCKER_GITHUB_PASSWORD }}
+          username: ${{ secrets.GITHUB_USERNAME }}
+          password: ${{ secrets.GITHUB_PASSWORD }}
           registry: docker.pkg.github.com
