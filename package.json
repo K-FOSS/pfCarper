@@ -7,7 +7,7 @@
   "main": "dist/index.js",
   "dependencies": {
     "@k-foss/ts-esnode": "1.1.0",
-    "digitalocean-js": "1.5.4",
+    "digitalocean-js": "1.5.5",
     "is-reachable": "4.0.0",
     "typescript": "3.8.3"
   },
