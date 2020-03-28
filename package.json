@@ -6,14 +6,14 @@
   "description": "pfCarper automates the assignment of a DigitalOcean Floating IP Between two droplets. Intented for cloud pfSense with Carp",
   "main": "dist/index.js",
   "dependencies": {
-    "@k-foss/ts-esnode": "^1.1.0",
-    "digitalocean-js": "^1.5.4",
-    "is-reachable": "^4.0.0",
-    "typescript": "^3.8.0-beta"
+    "@k-foss/ts-esnode": "1.1.0",
+    "digitalocean-js": "1.5.4",
+    "is-reachable": "4.0.0",
+    "typescript": "3.8.0-beta"
   },
   "devDependencies": {
-    "@types/node": "^13.7.1",
-    "dotenv": "^8.2.0"
+    "@types/node": "13.7.1",
+    "dotenv": "8.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
