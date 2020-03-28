@@ -12,7 +12,7 @@
     "typescript": "3.8.0-beta"
   },
   "devDependencies": {
-    "@types/node": "13.7.1",
+    "@types/node": "13.9.5",
     "dotenv": "8.2.0"
   },
   "scripts": {
