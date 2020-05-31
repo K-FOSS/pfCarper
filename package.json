@@ -6,7 +6,7 @@
   "description": "pfCarper automates the assignment of a DigitalOcean Floating IP Between two droplets. Intented for cloud pfSense with Carp",
   "main": "dist/index.js",
   "dependencies": {
-    "@k-foss/ts-esnode": "1.4.0",
+    "@k-foss/ts-esnode": "1.6.0",
     "digitalocean-js": "1.5.6",
     "is-reachable": "4.0.0",
     "typescript": "3.9.2"
