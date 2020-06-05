@@ -9,7 +9,7 @@
     "@k-foss/ts-esnode": "1.6.0",
     "digitalocean-js": "1.5.6",
     "is-reachable": "4.0.0",
-    "typescript": "3.9.2"
+    "typescript": "3.9.5"
   },
   "devDependencies": {
     "@types/node": "14.0.1",
